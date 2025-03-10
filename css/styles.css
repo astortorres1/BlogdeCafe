@@ -37,6 +37,7 @@ a {
 
 h1, h2, h3, h4 {
     font-family: var(--fuenteHeading);
+    line-height: 1.2;
 }
 
 h1 {
@@ -68,8 +69,13 @@ img {
 }
 
 /** Header **/
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+.header {
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -92,6 +98,7 @@ img {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 4rem;
     }
 }
 .logo {
@@ -156,6 +163,7 @@ img {
     font-weight: 700;
     margin-bottom: 2rem;
     transition: transform 0.3s ease-out;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -164,9 +172,107 @@ img {
     }
     .boton:hover {
         transform: scale(1.03);
+        cursor: pointer;
     }
 }
 
 .boton--primario {
     background-color: var(--negro);
+}
+.boton--secundario {
+    background-color: var(--primario);
+}
+.cursos {
+    list-style: none;
+}
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label,
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-curso__info,
+.curso__info {
+    font-weight: normal;
+}
+.widget-curso__label,
+.widget-curso__info,
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/** Sobre Nosotros **/
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+/** Contacto **/
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+     margin-bottom: 2rem;
+}
+
+.campo__label {            /** Le aplico el 0 para que no crezca y el 0 para que no se haga mas pequño **/
+    flex: 0 0 9rem;        /** Pero tu base tu tamaño y tu width van a ser de 9rem**/
+    text-align: right;
+    padding-right: 2rem;     
+}
+
+.campo__field {
+    flex: 1; /** Factor de crecimiento y se adapta a lo que tiene disponible**/
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    height: 20rem;
 }

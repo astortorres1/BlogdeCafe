@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogDeCafé</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlogDeCafé</title>
+<meta name="description" content="Página web de blog de café">
+
+<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    
+<!-- Preconnect para mejorar la carga de Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+<!-- Carga de Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+<!-- Prefetch de la página "nosotros" para mejorar la navegación -->
+<link rel="prefetch" href="./pages/nosotros.html" as="document">
+    
+<!-- Carga de CSS sin `preload` innecesario -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
+    
     <body>
         <header class="header">
 
@@ -20,8 +33,9 @@
                     </a>
 
                     <nav class="navegacion">
+                        <a href="index.html" class="navegacion__enlace">Inicio</a>
                         <a href="./pages/nosotros.html" class="navegacion__enlace">Nosotros</a>
-                        <a href="./pages/contacto.html" class="navegacion__enlace">Cursos</a>
+                        <a href="./pages/cursos.html" class="navegacion__enlace">Cursos</a>
                         <a href="./pages/contacto.html" class="navegacion__enlace">Contacto</a>
                     </nav>
                 </div>
@@ -40,7 +54,10 @@
 
                 <article class="entrada">
                     <div class="entrada__imagen">
-                        <img src="img/blog1.jpg" alt="Imagen blog">
+                        <picture>
+                            <source loading="lazy" srcset="img/blog1.webp" type="image/webp" >
+                            <img loading="lazy" src="img/blog1.jpg" alt="Imagen blog">
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -48,12 +65,14 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, quas, reiciendis unde incidunt necessitatibus excepturi nulla illum commodi quibusdam sapiente aut ab, eius consequatur aperiam! Consectetur eos porro nesciunt dolorum!</p>
                         <a href="./pages/entrada.html" class="boton boton--primario">Leer Entrada</a>
                     </div>
-
                 </article>
 
                 <article class="entrada">
                     <div class="entrada__imagen">
-                        <img src="img/blog2.jpg" alt="Imagen blog">
+                        <picture>
+                            <source loading="lazy" srcset="img/blog2.webp" type="image/webp" >
+                            <img loading="lazy" src="img/blog2.jpg" alt="Imagen blog">
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -66,7 +85,10 @@
 
                 <article class="entrada">
                     <div class="entrada__imagen">
-                        <img src="img/blog3.jpg" alt="Imagen blog">
+                        <picture>
+                            <source loading="lazy" srcset="img/blog3.webp" type="image/webp" >
+                            <img loading="lazy" src="img/blog3.jpg" alt="Imagen blog">
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -81,8 +103,50 @@
 
             <aside class="sidebar">
                 <h3>Nuestro Cursos y Talleres</h3>
+
+                <ul class="cursos no-padding">
+                    <li class="widget-curso">
+                        <h4 class="no-margin"> Técnicas de extracción de Café</h4>
+                        <p class="widget-curso__label">Precio:
+                            <span class="widget-curso__info">Gratis</span>
+                        </p>
+                        <p class="widget-curso__label">Cupo:
+                            <span class="widget-curso__info">20</span>
+                        </p>
+                        <a href="./pages/entrada.html" class="boton boton--secundario">Más información de los cursos</a>
+                    </li>
+
+                    <li class="widget-curso">
+                        <h4 class="no-margin">4 Recetas de Café para Principiantes</h4>
+                        <p class="widget-curso__label">Precio:
+                            <span class="widget-curso__info">Gratis</span>
+                        </p>
+                        <p class="widget-curso__label">Cupo:
+                            <span class="widget-curso__info">20</span>
+                        </p>
+                        <a href="./pages/entrada.html" class="boton boton--secundario">Más información de los cursos</a>
+                    </li>
+
+                </ul>
+
             </aside>
         </section>
 
+        <footer class="footer">
+            <div class="contenedor">
+                <div class="barra">
+                    <a class="logo" href="index.html">
+                        <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafé</span></h1>
+                    </a>
+
+                    <nav class="navegacion">
+                        <a href="./pages/nosotros.html" class="navegacion__enlace">Nosotros</a>
+                        <a href="./pages/contacto.html" class="navegacion__enlace">Cursos</a>
+                        <a href="./pages/contacto.html" class="navegacion__enlace">Contacto</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+        <script src="js/modernizr.js"></script>
     </body>
 </html>
